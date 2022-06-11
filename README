@@ -35,10 +35,10 @@ Helping functions:
 5.	char** Sentences_Splitter(char** WordInSentence, char str[]): this method will cut the sentence into words
 compiling steps:
 compile: gcc -Wall -Wextra -Wvla -std=c99 tweetsGenerator.c -o tweetsGenerator
-run: ./tweetsGenerator <seed number> <num of tweets> <file path> < Optional- number of words to read>
+run: valgrind --track-origins=yes -s --leak-check=full --show-leak-kinds=all --show-leak-kinds=indirect,reachable ./tweetsGenerator <seed number> <num of tweets> <file path> < Optional- number of words to read>
     (if no number of words, reads the All the file)
     Example:
-   ./tweetsGenerator 4321 200 justdoit_tweets.txt 
+   valgrind --track-origins=yes -s --leak-check=full --show-leak-kinds=all --show-leak-kinds=indirect,reachable ./tweetsGenerator 4321 200 justdoit_tweets.txt 
 
 
 
